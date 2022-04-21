@@ -1,0 +1,12 @@
+
+body {
+  background-image: url(../img/sapi2.JPG);
+  background-size: cover;
+}
+.table > tbody > tr > * {
+  vertical-align: middle;
+}
+
+h2 > .mt-2 {
+  text-align: center;
+}
