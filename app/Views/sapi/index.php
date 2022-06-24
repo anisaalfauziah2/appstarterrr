@@ -14,6 +14,21 @@
     <center>
       <h2>Daftar Sapi</h2>
     </center><br>
+
+    <div class="row">
+      <div class="col-6">
+        <form action="" method="post">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Eartag Sapi  " name="keyword">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="submit" name="submit">Cari</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
     <div class="row">
       <div class="col-5">
         <a href="/sapi/create" class="btn btn-primary mt-2">Tambah Data Pemeriksaan</a>
@@ -22,16 +37,10 @@
             <?= session()->getFlashdata('pesan'); ?>
           </div>
         <?php endif; ?>
-        <!-- <form action="" method="post"> -->
-        <!-- <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Eartag Sapi  " name="keyword">
-  <div class="input-group-append">
-    <button class="btn btn-primary" type="submit" name="submit">Cari</button> -->
+
       </div>
     </div>
-    <!-- </form> -->
-    <!-- </div>
-        </div> -->
+
 
 
     <br>
@@ -50,7 +59,9 @@
         </tr>
 
       <tbody>
-        <?php $i = 1; ?>
+        <?php $i = 1
+          /** + (10 * ($currentPage - 1))**/
+        ; ?>
         <?php foreach ($sapi as $s) : ?>
           <tr>
             <th scope="row"><?= $i++; ?></th>
@@ -65,6 +76,7 @@
         <?php endforeach;  ?>
       </tbody>
     </table>
+    <?= $pager->links('sapi', 'sapi_pagination'); ?>
 
   </div>
   </div>

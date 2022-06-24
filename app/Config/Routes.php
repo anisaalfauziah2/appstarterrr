@@ -32,14 +32,17 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'sapi::index');
-$routes->get('/detail/(:any)', 'sapi::detail/$1');
-$routes->get('/kesehatan/(:any)', 'sapi::kesehatan/$1');
+$routes->get('/sapi/create', 'sapi::create');
+$routes->get('/sapi/edit/(:segment)', 'sapi::edit/$1');
+$routes->delete('/sapi/(:num)', 'sapi::delete/$1');
+$routes->get('/sapi/(:any)', 'sapi::detail/$1');
+// $routes->get('/kesehatan/(:any)', 'sapi::kesehatan/$1');
 
 
-$routes->get('/komik/create', 'Komik::create');
-$routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
-$routes->delete('/komik/(:num)', 'Komik::delete/$1');
-$routes->get('/komik/(:any)', 'Komik::detail/$1');
+// $routes->get('/komik/create', 'Komik::create');
+// $routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
+// $routes->delete('/komik/(:num)', 'Komik::delete/$1');
+// $routes->get('/komik/(:any)', 'Komik::detail/$1');
 
 
 /*

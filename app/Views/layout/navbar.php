@@ -7,9 +7,9 @@
 
       </div>
     </div>
-    <form class="d-flex">
+    <!-- <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Ear Tag" aria-label="Search" />
       <button class="btn btn-outline-dark" type="submit">Search</button>
     </form>
-  </div>
+  </div> -->
 </nav>
