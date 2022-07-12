@@ -29,9 +29,9 @@
 
 
                 <div class=" row mb-3">
-                    <label for="gejala" class="col-sm-3 col-form-label">Grade Sapi : </label>
+                    <label for="grade" class="col-sm-3 col-form-label">Grade Sapi : </label>
                     <div class="col-sm-10">
-                        <select type="text" class="form-control <?= ($validation->hasError('gejala')) ? 'is-invalid' : ''; ?>" id="gejala" name="gejala" value="<?= old('gejala'); ?>">
+                        <select type="text" class="form-control <?= ($validation->hasError('grade')) ? 'is-invalid' : ''; ?>" id="grade" name="grade" value="<?= old('grade'); ?>">
                             <option>....pilih....</option>
                             <option>A+</option>
                             <option>A</option>
@@ -42,15 +42,15 @@
                     </div>
                 </div>
                 <div class=" row mb-3">
-                    <label for="gejala" class="col-sm-3 col-form-label">Umur Sapi : </label>
+                    <label for="umur" class="col-sm-3 col-form-label">Umur Sapi : </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('gejala')) ? 'is-invalid' : ''; ?>" id="gejala" name="gejala" value="<?= old('gejala'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('umur')) ? 'is-invalid' : ''; ?>" id="umur" name="umur" value="<?= old('umur'); ?>">
                     </div>
                 </div>
                 <div class=" row mb-3">
-                    <label for="gejala" class="col-sm-3 col-form-label">Jenis Sapi : </label>
+                    <label for="jenis_sapi" class="col-sm-3 col-form-label">Jenis Sapi : </label>
                     <div class="col-sm-10">
-                        <select type="text" class="form-control <?= ($validation->hasError('gejala')) ? 'is-invalid' : ''; ?>" id="gejala" name="gejala" value="<?= old('gejala'); ?>">
+                        <select type="text" class="form-control <?= ($validation->hasError('jenis_sapi')) ? 'is-invalid' : ''; ?>" id="jenis_sapi" name="jenis_sapi" value="<?= old('jenis_sapi'); ?>">
                             <option>....pilih....</option>
                             <option>Belgian Blue</option>
                             <option>Galian Blonde</option>
@@ -60,78 +60,12 @@
                     </div>
                 </div>
                 <div class=" row mb-3">
-                    <label for="shifmen" class="col-sm-3 col-form-label">Kedatangan ke</label>
+                    <label for="kedatangan" class="col-sm-3 col-form-label">Kedatangan ke</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('shifmen')) ? 'is-invalid' : ''; ?>" id="shifmen" name="shifmen" value="<?= old('shifmen'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('kedatangan')) ? 'is-invalid' : ''; ?>" id="kedatangan" name="kedatangan" value="<?= old('kedatangan'); ?>">
                     </div>
                 </div>
 
-                <div class=" row mb-3">
-                    <label for="kandang" class="col-sm-3 col-form-label">Dari Kandang : </label>
-                    <div class="col-sm-10">
-                        <select class="form-control <?= ($validation->hasError('kandang')) ? 'is-invalid' : ''; ?>" id="kandang" name="kandang" value="<?= old('kandang'); ?>">
-                            <option>....pilih....</option>
-                            <option>A1</option>
-                            <option>A2</option>
-                            <option>A2</option>
-                            <option>A3</option>
-                            <option>A4</option>
-                            <option>A5</option>
-                            <option>B1</option>
-                            <option>B2</option>
-                            <option>B3</option>
-                            <option>B4</option>
-                            <option>B5</option>
-                            <option>C1</option>
-                            <option>C2</option>
-                            <option>C3</option>
-                            <option>C4</option>
-                            <option>C5</option>
-                        </select>
-                    </div>
-                </div>
-                <div class=" row mb-3">
-                    <label for="hospital" class="col-sm-3 col-form-label">No Hospital : </label>
-                    <div class="col-sm-10">
-                        <select class="form-control <?= ($validation->hasError('hospital')) ? 'is-invalid' : ''; ?>" id="hospital" name="hospital" value="<?= old('hospital'); ?>">
-                            <option>....pilih....</option>
-                            <option>D2</option>
-                            <option>H1</option>
-
-                        </select>
-                    </div>
-                </div>
-                <div class=" row mb-3">
-                    <label for="pengobatan" class="col-sm-3 col-form-label ">Nama Penyakit : </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('pengobatan')) ? 'is-invalid' : ''; ?>" id="pengobatan" name="pengobatan" value="<?= old('pengobatan'); ?>">
-                    </div>
-                </div>
-                <div class=" row mb-3">
-                    <label for="pengobatan" class="col-sm-3 col-form-label ">Gejalan Penyakit : </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('pengobatan')) ? 'is-invalid' : ''; ?>" id="pengobatan" name="pengobatan" value="<?= old('pengobatan'); ?>">
-                    </div>
-                </div>
-                <div class=" row mb-3">
-                    <label for="pengobatan" class="col-sm-3 col-form-label ">Pengobatan : </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('pengobatan')) ? 'is-invalid' : ''; ?>" id="pengobatan" name="pengobatan" value="<?= old('pengobatan'); ?>">
-                    </div>
-                </div>
-
-                <div class=" row mb-3">
-                    <label for="tgl" class="col-sm-3 col-form-label">Tanggal Masuk : </label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control <?= ($validation->hasError('tgl')) ? 'is-invalid' : ''; ?>" id="tgl" name="tgl" value="<?= old('tgl'); ?>">
-                    </div>
-                </div>
-                <div class=" row mb-3">
-                    <label for="tgl" class="col-sm-3 col-form-label">Tanggal Keluar : </label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control <?= ($validation->hasError('tgl')) ? 'is-invalid' : ''; ?>" id="tgl" name="tgl" value="<?= old('tgl'); ?>">
-                    </div>
-                </div>
 
                 <button type=" submit" class="btn btn-primary">Tambah Data</button>
             </form>

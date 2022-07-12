@@ -53,8 +53,8 @@
         <tr>
           <th scope="col">No.</th>
           <th scope="col">Ear Tag</th>
-          <th scope="col">Nomor Hospital Pen</th>
-          <th scope="col">Penyakit</th>
+          <th scope="col">Bobot</th>
+          <th scope="col">Sex</th>
           <th scope="col">Detail</th>
         </tr>
 
@@ -65,18 +65,17 @@
         <?php foreach ($sapi as $s) : ?>
           <tr>
             <th scope="row"><?= $i++; ?></th>
-            <td><?= $s->eartag ?></td>
-            <td><?= $s->id_hospital_pen ?></td>
-            <td><?= $s->nama_penyakit ?></td>
+            <td><?= $s['id'] ?></td>
+
             <td>
-              <a href="/detail/<?= $s->eartag ?>" class="btn btn-primary">Detail Sapi</a>
-              <a href="/kesehatan/<?= $s->eartag ?>" class="btn btn-success">Kesehatan</a>
+              <a href="/detail/<?= $s['id'] ?>" class="btn btn-primary">Detail Sapi</a>
+
             </td>
           </tr>
         <?php endforeach;  ?>
       </tbody>
     </table>
-    <?= $pager->links('sapi', 'sapi_pagination'); ?>
+
 
   </div>
   </div>
