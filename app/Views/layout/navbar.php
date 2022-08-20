@@ -3,9 +3,10 @@
     <a class="navbar-brand">Catatan Pemeriksaan Rutin Sapi</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/sapi">Catatan</a>
+        <a class="nav-link" href="/pemeriksaan">Pemeriksaan</a>
 
       </div>
+
     </div>
     <!-- <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Ear Tag" aria-label="Search" />
