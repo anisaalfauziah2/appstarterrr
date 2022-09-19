@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 08:38 AM
+-- Generation Time: Aug 20, 2022 at 11:30 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -24,50 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hospital_pen`
+-- Table structure for table `kesehatan`
 --
 
-CREATE TABLE `hospital_pen` (
-  `id_hospital_pen` varchar(11) NOT NULL,
-  `jenis_hospital_pen` varchar(64) NOT NULL,
-  `kapasitas_hospital_pen` varchar(64) NOT NULL
+CREATE TABLE `kesehatan` (
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kandang_pen`
+-- Table structure for table `pakan`
 --
 
-CREATE TABLE `kandang_pen` (
-  `id_kandang_pen` varchar(11) NOT NULL,
-  `jenis_kandang_pen` varchar(64) NOT NULL,
-  `kapasitas_kandang_pen` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `obat`
---
-
-CREATE TABLE `obat` (
-  `id_obat` varchar(11) NOT NULL,
-  `nama_obat` varchar(64) DEFAULT NULL,
-  `jenis_obat` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pegawai`
---
-
-CREATE TABLE `pegawai` (
-  `id_pegawai` varchar(11) NOT NULL,
-  `nama_pegawai` varchar(64) NOT NULL,
-  `username` varchar(64) NOT NULL,
-  `password` varchar(24) NOT NULL
+CREATE TABLE `pakan` (
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -77,132 +48,71 @@ CREATE TABLE `pegawai` (
 --
 
 CREATE TABLE `pemeriksaan` (
-  `id_pemeriksaan` varchar(11) DEFAULT NULL,
-  `eartag` varchar(11) DEFAULT NULL,
-  `id_hospital_pen` varchar(11) DEFAULT NULL,
-  `id_pegawai` varchar(11) DEFAULT NULL,
-  `id_penyakit` varchar(11) DEFAULT NULL,
-  `id_obat` varchar(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `eartag` varchar(11) NOT NULL,
+  `bobot` int(11) NOT NULL,
+  `sex` varchar(12) NOT NULL,
+  `grade` varchar(12) NOT NULL,
+  `umur` int(11) NOT NULL,
+  `jenis_sapi` varchar(64) NOT NULL,
+  `kedatangan` int(11) NOT NULL,
+  `gejala` varchar(244) NOT NULL,
+  `no_kandang` varchar(12) NOT NULL,
+  `no_hospital` varchar(12) NOT NULL,
   `tanggal_masuk` date NOT NULL,
   `tanggal_keluar` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `penentuan_kandang`
+-- Dumping data for table `pemeriksaan`
 --
 
-CREATE TABLE `penentuan_kandang` (
-  `eartag` varchar(11) DEFAULT NULL,
-  `id_kandang_pen` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `penyakit`
---
-
-CREATE TABLE `penyakit` (
-  `id_penyakit` varchar(11) NOT NULL,
-  `nama_penyakit` varchar(64) DEFAULT NULL,
-  `jenis_penyakit` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sapi`
---
-
-CREATE TABLE `sapi` (
-  `eartag` varchar(11) NOT NULL,
-  `bobot` int(11) NOT NULL,
-  `sex` varchar(24) NOT NULL,
-  `grade` varchar(10) NOT NULL,
-  `umur` int(11) NOT NULL,
-  `jenis_sapi` varchar(64) NOT NULL,
-  `kedatangan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `pemeriksaan` (`id`, `eartag`, `bobot`, `sex`, `grade`, `umur`, `jenis_sapi`, `kedatangan`, `gejala`, `no_kandang`, `no_hospital`, `tanggal_masuk`, `tanggal_keluar`) VALUES
+(2, 'B62', 500, 'Betina', 'B', 25, 'Galian Blonde', 6, 'flu', 'C2', 'H1', '2022-04-03', '2022-07-05');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `hospital_pen`
+-- Indexes for table `kesehatan`
 --
-ALTER TABLE `hospital_pen`
-  ADD PRIMARY KEY (`id_hospital_pen`);
+ALTER TABLE `kesehatan`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kandang_pen`
+-- Indexes for table `pakan`
 --
-ALTER TABLE `kandang_pen`
-  ADD PRIMARY KEY (`id_kandang_pen`);
-
---
--- Indexes for table `obat`
---
-ALTER TABLE `obat`
-  ADD PRIMARY KEY (`id_obat`);
-
---
--- Indexes for table `pegawai`
---
-ALTER TABLE `pegawai`
-  ADD PRIMARY KEY (`id_pegawai`);
+ALTER TABLE `pakan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pemeriksaan`
 --
 ALTER TABLE `pemeriksaan`
-  ADD KEY `eartag` (`eartag`),
-  ADD KEY `id_hospital_pen` (`id_hospital_pen`),
-  ADD KEY `id_pegawai` (`id_pegawai`),
-  ADD KEY `id_obat` (`id_obat`),
-  ADD KEY `id_penyakit` (`id_penyakit`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `penentuan_kandang`
---
-ALTER TABLE `penentuan_kandang`
-  ADD KEY `eartag` (`eartag`),
-  ADD KEY `id_kandang_pen` (`id_kandang_pen`);
-
---
--- Indexes for table `penyakit`
---
-ALTER TABLE `penyakit`
-  ADD PRIMARY KEY (`id_penyakit`);
-
---
--- Indexes for table `sapi`
---
-ALTER TABLE `sapi`
-  ADD PRIMARY KEY (`eartag`);
-
---
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `pemeriksaan`
+-- AUTO_INCREMENT for table `kesehatan`
+--
+ALTER TABLE `kesehatan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pakan`
+--
+ALTER TABLE `pakan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pemeriksaan`
 --
 ALTER TABLE `pemeriksaan`
-  ADD CONSTRAINT `eartag` FOREIGN KEY (`eartag`) REFERENCES `sapi` (`eartag`),
-  ADD CONSTRAINT `pemeriksaan_ibfk_1` FOREIGN KEY (`id_hospital_pen`) REFERENCES `hospital_pen` (`id_hospital_pen`),
-  ADD CONSTRAINT `pemeriksaan_ibfk_2` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`),
-  ADD CONSTRAINT `pemeriksaan_ibfk_3` FOREIGN KEY (`id_obat`) REFERENCES `obat` (`id_obat`),
-  ADD CONSTRAINT `pemeriksaan_ibfk_4` FOREIGN KEY (`id_penyakit`) REFERENCES `penyakit` (`id_penyakit`);
-
---
--- Constraints for table `penentuan_kandang`
---
-ALTER TABLE `penentuan_kandang`
-  ADD CONSTRAINT `penentuan_kandang_ibfk_1` FOREIGN KEY (`eartag`) REFERENCES `sapi` (`eartag`),
-  ADD CONSTRAINT `penentuan_kandang_ibfk_2` FOREIGN KEY (`id_kandang_pen`) REFERENCES `kandang_pen` (`id_kandang_pen`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
