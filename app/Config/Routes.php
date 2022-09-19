@@ -33,7 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'pemeriksaan::index');
 $routes->get('/pemeriksaan/create', 'pemeriksaan::create');
-$routes->get('/pemeriksaan/edit/(:segment)', 'pemeriksaan::edit/$1');
+$routes->get('/pemeriksaan/edit/(:num)', 'pemeriksaan::edit/$1');
+$routes->get('/pemeriksaan/update/(:num)', 'pemeriksaan::update/$1');
 $routes->delete('/pemeriksaan/(:num)', 'pemeriksaan::delete/$1');
 $routes->get('/pemeriksaan/(:any)', 'pemeriksaan::detail/$1');
 
