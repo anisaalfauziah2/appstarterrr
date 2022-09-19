@@ -10,8 +10,9 @@
                 <?= csrf_field(); ?>
 
                 <div class=" row mb-3">
+                    <label for="bobot" class="col-sm-3 col-form-label">Bobot Sapi : </label>
                     <div class="col-sm-10">
-                        <input hidden type="text" class="form-control <?= ($validation->hasError('bobot')) ? 'is-invalid' : ''; ?>" id="bobot" name="bobot" value="<?= old('bobot'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('bobot')) ? 'is-invalid' : ''; ?>" id="bobot" name="bobot" value="<?= old('bobot'); ?>">
                     </div>
                 </div>
 

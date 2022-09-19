@@ -4,16 +4,14 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h2 class="my-3">Form Tambah Data Pemeriksaan</h2>
- 
-            <form action='/pemeriksaan/update/<?php $pemeriksaan["id"]?>' method="post" enctype="multipart/form-data">
+            <h2 class="my-3">Form Ubah Data Pemeriksaan</h2><br>
+            <center>
+                <h2> EARTAG : <?= $pemeriksaan['id'] ?> </th>
+                </h2>
+            </center>
+            <form action="/pemeriksaan/update/ <?= $pemeriksaan['id']; ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
-                <div class=" row mb-3">
-                    <label for="id" class="col-sm-3 col-form-label">id Sapi : </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('id')) ? 'is-invalid' : ''; ?>" id="id" name="id" value="<?= (old('id')) ? old('id') : $pemeriksaan['id'] ?>">
-                    </div>
-                </div>
+
                 <div class=" row mb-3">
                     <label for="bobot" class="col-sm-3 col-form-label">Bobot Sapi : </label>
                     <div class="col-sm-10">

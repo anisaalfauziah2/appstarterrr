@@ -10,7 +10,7 @@
   <div class="container ">
 
     <center>
-      <h2 class="mt-2">Catatan Pemeriksaan Rutin Sapi</h2>
+      <h2 class="mt-2">Catatan Kesehatan Rutin Sapi</h2>
     </center>
 
     <br>
@@ -35,7 +35,7 @@
 
     <div class="row">
       <div class="col-5">
-        <a href="/pemeriksaan/create" class="btn btn-primary mt-2">Tambah Data Pemeriksaan</a>
+        <!-- <a href="/kesehatan/create" class="btn btn-primary mt-2">Tambah Data Kesehatan</a> -->
         <?php if (session()->getFlashdata('pesan')) : ?>
           <div class="alert alert-success" role="alert">
             <?= session()->getFlashdata('pesan'); ?>
@@ -49,32 +49,34 @@
 
     <br>
 
-    <table class="table table-sm table-bordered" id="tabelpemeriksaan">
+    <table class="table table-sm table-bordered" id="tabelkesehatan">
 
       <!-- Table -->
       </thead>
       <thead>
         <tr>
           <th scope="col">No.</th>
-          <th scope="col">Ear Tag</th>
-          <th scope="col">Bobot</th>
-          <th scope="col">Sex</th>
+          <th scope="col">EarTag</th>
+          <th scope="col">Nama Penyakit</th>
+          <th scope="col">Gejala</th>
           <th scope="col">Detail</th>
         </tr>
 
       <tbody>
+
+
         <?php $i = 1
           /** + (10 * ($currentPage - 1))**/
         ; ?>
-        <?php foreach ($pemeriksaan as $p) : ?>
+        <?php foreach ($kesehatan as $p) : ?>
           <tr>
             <th scope="row"><?= $i++; ?></th>
             <td><?= $p->eartag ?></td>
-            <td><?= $p->bobot ?></td>
-            <td><?= $p->sex ?></td>
+            <td><?= $p->penyakit ?></td>
+            <td><?= $p->gejala ?></td>
             <td>
-              <a href="/pemeriksaan/edit/<?= $p->id ?>" class="btn btn-warning">Edit</a>
-              <a href="/pemeriksaan/<?= $p->id ?>" class="btn btn-primary">Detail Sapi</a>
+              <a href="/kesehatan/edit/<?= $p->id ?>" class="btn btn-warning">Edit</a>
+              <a href="/kesehatan/detail/<?= $p->id ?>" class="btn btn-primary">Detail Sapi</a>
 
             </td>
           </tr>
@@ -94,13 +96,13 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
   <script>
     $(document).ready(function() {
-      $('#tabelpemeriksaan').DataTable();
+      $('#tabelkesehatan').DataTable();
     });
   </script>
   <!-- </section> -->
 
   <center>
-    <a href="/kesehatan" class="btn btn-success mt-2">KESEHATAN</a>
+    <a href="/sapi" class="btn btn-warning mt-2">PEMERIKSAAN</a>
     <a href="/sapi" class="btn btn-primary mt-2">MEDICAL RECORD</a>
   </center><br>
 
